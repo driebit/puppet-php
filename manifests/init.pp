@@ -222,7 +222,7 @@ class php (
     false => true,
   }
 
-  if ($php::source and $php::template) {
+  if ($php::source != '' and $php::template != '') {
     fail ('PHP: cannot set both source and template')
   }
   if ($php::source and $php::bool_augeas) {
@@ -269,7 +269,7 @@ class php (
   }
 
   # The whole php configuration directory can be recursively overriden
-  if $php::source_dir {
+  if $php::source_dir != '' {
     file { 'php.dir':
       ensure  => directory,
       path    => $php::config_dir,
