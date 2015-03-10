@@ -50,7 +50,7 @@ define php::module (
   $install_options     = [],
   $service_autorestart = '',
   $module_prefix       = '',
-  $absent              = ''
+  $absent              = undef
   ) {
 
   include php
